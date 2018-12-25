@@ -2,6 +2,7 @@ package com.theah64.livedata_transformation_example.di.modules;
 
 import com.theah64.livedata_transformation_example.data.remote.RemoteInterface;
 
+import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
@@ -56,7 +57,8 @@ public class NetworkModule {
 
     @Singleton
     @Provides
-    @Named("base_url") // used @Named because String data type is common
+    @Named("base_url")
+        // used @Named because String data type is common
     String provideBaseUrl() {
         return baseUrl;
     }
