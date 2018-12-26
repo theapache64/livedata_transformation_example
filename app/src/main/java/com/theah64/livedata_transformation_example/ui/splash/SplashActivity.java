@@ -19,25 +19,14 @@ import retrofit2.Response;
 public class SplashActivity extends AppCompatActivity {
 
     @Inject
-    RemoteInterface remoteInterface;
+    SplashActivityViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        App.getApplicationComponent().inject(this);
 
-        remoteInterface.search("Shifar").enqueue(new Callback<SearchResponse>() {
-            @Override
-            public void onResponse(Call<SearchResponse> call, Response<SearchResponse> response) {
-                Toast.makeText(SplashActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-            }
 
-            @Override
-            public void onFailure(Call<SearchResponse> call, Throwable t) {
-
-            }
-        });
 
     }
 }
