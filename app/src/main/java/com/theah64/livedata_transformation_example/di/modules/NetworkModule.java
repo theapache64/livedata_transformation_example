@@ -22,11 +22,13 @@ public class NetworkModule {
         this.baseUrl = baseUrl;
     }
 
+
     @Singleton
     @Provides
     RemoteInterface provideRemoteInterface(Retrofit retrofit) {
         return retrofit.create(RemoteInterface.class);
     }
+
 
     @Singleton
     @Provides
@@ -37,6 +39,7 @@ public class NetworkModule {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
+
 
     @Singleton
     @Provides
@@ -55,7 +58,6 @@ public class NetworkModule {
     }
 
 
-    @Singleton
     @Provides
     @Named("base_url")
         // used @Named because String data type is common

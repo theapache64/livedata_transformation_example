@@ -1,26 +1,38 @@
 package com.theah64.livedata_transformation_example.util;
 
+import android.app.Activity;
 import android.app.Application;
 
 import com.theah64.livedata_transformation_example.di.components.ApplicationComponent;
 import com.theah64.livedata_transformation_example.di.components.DaggerApplicationComponent;
 import com.theah64.livedata_transformation_example.di.modules.NetworkModule;
 
-public class App extends Application {
+import javax.inject.Inject;
+
+import dagger.android.AndroidInjector;
+import dagger.android.DispatchingAndroidInjector;
+import dagger.android.HasActivityInjector;
+
+public class App extends Application implements HasActivityInjector {
 
     public static final String BASE_URL = "http://theapache64.com/mock_api/get_json/lte_example/";
-    private static ApplicationComponent daggerApplicationComponent;
+
+    @Inject
+    DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
-        daggerApplicationComponent = DaggerApplicationComponent.builder()
+        DaggerApplicationComponent.builder()
                 .networkModule(new NetworkModule(BASE_URL))
-                .build();
+                .build()
+                .inject(this);
     }
 
-    public static ApplicationComponent getApplicationComponent() {
-        return daggerApplicationComponent;
+
+    @Override
+    public AndroidInjector<Activity> activityInjector() {
+        return dispatchingAndroidInjector;
     }
 }

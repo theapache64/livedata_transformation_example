@@ -13,6 +13,7 @@ import javax.inject.Inject;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
+import dagger.android.AndroidInjection;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -20,12 +21,16 @@ import retrofit2.Response;
 public class SplashActivity extends AppCompatActivity {
 
 
+    @Inject
+    RemoteInterface remoteInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        AndroidInjection.inject(this);
 
+        System.out.println("The thing is " + remoteInterface);
     }
 }
