@@ -16,6 +16,7 @@ import com.theah64.livedata_transformation_example.util.App;
 import javax.inject.Inject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import dagger.android.AndroidInjection;
 import retrofit2.Call;
@@ -25,27 +26,27 @@ import retrofit2.Response;
 public class SplashActivity extends AppCompatActivity {
 
 
-    @Inject
-    RemoteInterface remoteInterface;
-
-    @Inject
-    SearchResponse.User user;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        ((App) getApplicationContext()).getApplicationComponent()
-                .plus(new SplashActivityModule())
-                .inject(this);
+        final SplashActivityViewModel viewModel = ViewModelProviders.of(this)
+                .get(SplashActivityViewModel.class);
 
-        System.out.println("The thing is " + remoteInterface);
-        System.out.println("The thing is " + user);
+        // observing for navigation
+        viewModel.getNavigation().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean aBoolean) {
+                System.out.println("Hit!!!");
+                if (aBoolean) {
+                    viewModel.getNavigation().removeObservers(SplashActivity.this);
+                }
+            }
+        });
 
+        viewModel.start();
     }
 
-    public void onImageClicked(View view) {
-        startActivity(new Intent(this, MainActivity.class));
-    }
+
 }
