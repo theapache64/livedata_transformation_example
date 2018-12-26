@@ -12,20 +12,19 @@ import com.theah64.livedata_transformation_example.util.App;
 import javax.inject.Inject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class SplashActivity extends AppCompatActivity {
 
-    @Inject
-    SplashActivityViewModel viewModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
 
 
     }

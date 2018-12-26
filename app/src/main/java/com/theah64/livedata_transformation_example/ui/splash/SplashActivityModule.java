@@ -8,12 +8,10 @@ import dagger.Provides;
 @Module
 class SplashActivityModule {
 
-
-
     @PerActivity
     @Provides
     SplashActivityViewModel provideSplashActivityViewModel() {
-        return
+        return null;
     }
 
 }
