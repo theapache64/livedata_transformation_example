@@ -19,17 +19,23 @@ public class App extends Application implements HasActivityInjector {
 
     @Inject
     DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
+    private ApplicationComponent applicationComponent;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
-        DaggerApplicationComponent.builder()
+        applicationComponent = DaggerApplicationComponent.builder()
                 .networkModule(new NetworkModule(BASE_URL))
-                .build()
-                .inject(this);
+                .build();
+
+        applicationComponent.inject(this);
     }
 
+
+    public ApplicationComponent getApplicationComponent() {
+        return applicationComponent;
+    }
 
     @Override
     public AndroidInjector<Activity> activityInjector() {

@@ -60,7 +60,6 @@ public class NetworkModule {
 
     @Provides
     @Named("base_url")
-        // used @Named because String data type is common
     String provideBaseUrl() {
         return baseUrl;
     }

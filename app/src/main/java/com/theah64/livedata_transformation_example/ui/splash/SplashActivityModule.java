@@ -7,13 +7,7 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-class SplashActivityModule {
-
-    @PerActivity
-    @Provides
-    SplashActivityViewModel provideSplashActivityViewModel() {
-        return null;
-    }
+public class SplashActivityModule {
 
     @Provides
     SearchResponse.User provideUser() {

@@ -1,6 +1,6 @@
 package com.theah64.livedata_transformation_example.di.modules;
 
-import com.theah64.livedata_transformation_example.ui.splash.SplashActivity;
+import com.theah64.livedata_transformation_example.ui.main.MainActivity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -9,5 +9,5 @@ import dagger.android.ContributesAndroidInjector;
 public abstract class BuildersModule {
 
     @ContributesAndroidInjector
-    abstract SplashActivity contributeSplashActivity();
+    abstract MainActivity contributeMainActivity();
 }

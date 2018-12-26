@@ -12,6 +12,7 @@
         android:contentDescription="@string/Logo"
         android:src="@drawable/transform"
         android:tint="@color/colorPrimary"
+        android:onClick="onImageClicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
