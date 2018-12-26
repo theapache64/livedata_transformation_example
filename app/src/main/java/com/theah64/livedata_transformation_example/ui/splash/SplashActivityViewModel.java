@@ -3,6 +3,7 @@ package com.theah64.livedata_transformation_example.ui.splash;
 import android.annotation.SuppressLint;
 
 import com.theah64.livedata_transformation_example.util.SingleLiveEvent;
+import com.theah64.livedata_transformation_example.util.System;
 
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
@@ -29,7 +30,7 @@ class SplashActivityViewModel extends ViewModel {
         Observable.just(1, 2, 3, 4, 5)
                 .zipWith(Observable.interval(1000, TimeUnit.MILLISECONDS), (item, interval) -> item)
                 .subscribe(ignore -> {
-                    System.out.printf("Hitting..!!");
+                    System.out.println("Hitting..!!" + ignore);
                     navigation.postValue(true);
                 });
 
