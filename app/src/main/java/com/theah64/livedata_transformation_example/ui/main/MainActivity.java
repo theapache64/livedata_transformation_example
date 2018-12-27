@@ -1,5 +1,7 @@
 package com.theah64.livedata_transformation_example.ui.main;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -26,6 +28,11 @@ public class MainActivity extends BaseAppCompatActivity {
 
     @Inject
     RemoteInterface remoteInterface;
+
+    public static void start(Context context) {
+        final Intent i = new Intent(context, MainActivity.class);
+        context.startActivity(i);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
