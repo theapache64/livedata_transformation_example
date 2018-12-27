@@ -9,6 +9,8 @@
     <string name="custom">Custom</string>
     <string name="custom_desc">To implement your own transformation you can you use the MediatorLiveData class, which listens to other LiveData objects and processes events emitted by them.</string>
     <string name="CHANGE_COLOR">CHANGE COLOR</string>
+    <string name="ADD_USER">ADD USER</string>
+    <string name="Enter_your_name">Enter your name</string>
 
 
 </resources>

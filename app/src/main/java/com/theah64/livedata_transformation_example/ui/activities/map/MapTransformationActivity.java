@@ -3,6 +3,7 @@ package com.theah64.livedata_transformation_example.ui.activities.map;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.theah64.livedata_transformation_example.R;
 import com.theah64.livedata_transformation_example.databinding.ActivityMapTransformationBinding;
@@ -37,6 +38,10 @@ public class MapTransformationActivity extends BaseAppCompatActivity {
                 .mapTransformationActivityModule(new MapTransformationActivityModule(this))
                 .build()
                 .inject(this);
+
+        viewModel.getToastMessage().observe(this, data -> {
+            Toast.makeText(this, data, Toast.LENGTH_SHORT).show();
+        });
 
         binding.setViewModel(viewModel);
 

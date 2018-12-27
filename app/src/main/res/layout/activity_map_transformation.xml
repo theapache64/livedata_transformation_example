@@ -13,18 +13,27 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@{viewModel.backgroundColor}"
         tools:context=".ui.activities.map.MapTransformationActivity">
 
-        <Button
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:onClick="@{()-> viewModel.changeBackgroundColor()}"
-            android:text="@string/CHANGE_COLOR"
+            android:hint="@string/Enter_your_name"
+            android:text="@={viewModel.name}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{()-> viewModel.onAddUserClicked(viewModel.name)}"
+            android:text="@string/ADD_USER"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etName" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
