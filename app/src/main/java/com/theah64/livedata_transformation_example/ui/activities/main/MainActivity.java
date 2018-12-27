@@ -7,9 +7,15 @@ import android.os.Bundle;
 import com.theah64.livedata_transformation_example.R;
 import com.theah64.livedata_transformation_example.ui.activities.base.BaseAppCompatActivity;
 
+import javax.inject.Inject;
+
 import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends BaseAppCompatActivity {
+
+
+    @Inject
+    MainActivityViewModel viewModel;
 
     public static void start(Context context) {
         final Intent i = new Intent(context, MainActivity.class);
@@ -24,9 +30,10 @@ public class MainActivity extends BaseAppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-
-
+        DaggerMainActivityComponent.builder()
+                .mainActivityModule(new MainActivityModule(this))
+                .build()
+                .inject(this);
 
 
     }

@@ -1,23 +1,29 @@
 package com.theah64.livedata_transformation_example.ui.activities.main;
 
+import com.theah64.livedata_transformation_example.di.base.BaseActivityModule;
+
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProviders;
 import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class MainActivityModule {
+public class MainActivityModule extends BaseActivityModule<MainActivityViewModel> {
 
-    private final FragmentActivity fragmentActivity;
 
     public MainActivityModule(FragmentActivity fragmentActivity) {
-        this.fragmentActivity = fragmentActivity;
+        super(fragmentActivity);
+    }
+
+    @Override
+    protected MainActivityViewModel getViewModel() {
+        return ViewModelProviders.of(getFragmentActivity())
+                .get(MainActivityViewModel.class);
     }
 
     @Provides
-    MainActivityViewModel provideViewModel() {
-        return ViewModelProviders.of(fragmentActivity)
-                .get(MainActivityViewModel.class);
+    MainActivityViewModel provideMainActivityViewModel() {
+        return getViewModel();
     }
 
 }

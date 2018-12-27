@@ -1,24 +1,28 @@
 package com.theah64.livedata_transformation_example.ui.activities.splash;
 
+import com.theah64.livedata_transformation_example.di.base.BaseActivityModule;
+
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProviders;
 import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class SplashActivityModule {
-
-    private final FragmentActivity fragmentActivity;
+class SplashActivityModule extends BaseActivityModule<SplashActivityViewModel> {
 
     SplashActivityModule(FragmentActivity fragmentActivity) {
-        this.fragmentActivity = fragmentActivity;
+        super(fragmentActivity);
     }
 
-    @Provides
-    protected SplashActivityViewModel provideViewModel() {
-        return ViewModelProviders.of(fragmentActivity)
+    @Override
+    protected SplashActivityViewModel getViewModel() {
+        return ViewModelProviders.of(getFragmentActivity())
                 .get(SplashActivityViewModel.class);
     }
 
+    @Provides
+    SplashActivityViewModel provideSplashActivityViewModel() {
+        return getViewModel();
+    }
 
 }

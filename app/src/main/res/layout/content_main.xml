@@ -22,11 +22,14 @@
             android:id="@+id/rvMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:adapter="@{viewModel.getAdapter()}"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:itemCount="10"
+            tools:listitem="@layout/menu_items_row" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
