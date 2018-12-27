@@ -1,6 +1,7 @@
 package com.theah64.livedata_transformation_example.ui.splash;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.theah64.livedata_transformation_example.R;
 import com.theah64.livedata_transformation_example.util.System;
@@ -24,10 +25,7 @@ public class SplashActivity extends AppCompatActivity {
         viewModel.getNavigation().observe(this, new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean aBoolean) {
-                if (aBoolean) {
-                    System.out.println("Navigation is true, removing");
-                    viewModel.getNavigation().removeObservers(SplashActivity.this);
-                }
+                Toast.makeText(SplashActivity.this, "Navigation is true, removing", Toast.LENGTH_SHORT).show();
             }
         });
 
