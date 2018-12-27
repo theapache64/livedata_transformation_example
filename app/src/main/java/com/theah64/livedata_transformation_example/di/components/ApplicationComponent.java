@@ -2,9 +2,6 @@ package com.theah64.livedata_transformation_example.di.components;
 
 import com.theah64.livedata_transformation_example.di.modules.BuildersModule;
 import com.theah64.livedata_transformation_example.di.modules.NetworkModule;
-import com.theah64.livedata_transformation_example.ui.splash.SplashActivity;
-import com.theah64.livedata_transformation_example.ui.splash.SplashActivityComponent;
-import com.theah64.livedata_transformation_example.ui.splash.SplashActivityModule;
 import com.theah64.livedata_transformation_example.util.App;
 
 import javax.inject.Singleton;
@@ -20,5 +17,4 @@ import dagger.android.AndroidInjectionModule;
 })
 public interface ApplicationComponent {
     void inject(App app);
-    SplashActivityComponent plus(SplashActivityModule splashActivityModule);
 }

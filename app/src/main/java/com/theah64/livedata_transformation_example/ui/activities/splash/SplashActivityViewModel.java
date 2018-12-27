@@ -1,4 +1,4 @@
-package com.theah64.livedata_transformation_example.ui.splash;
+package com.theah64.livedata_transformation_example.ui.activities.splash;
 
 import com.theah64.livedata_transformation_example.util.SingleLiveEvent;
 import com.theah64.livedata_transformation_example.util.System;
@@ -11,7 +11,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 
 class SplashActivityViewModel extends ViewModel {
 
-    private static final long SPLASH_DURATION = 3000;
+    private static final long SPLASH_DURATION = 1500;
     private final SingleLiveEvent timerEvent = new SingleLiveEvent();
 
     void startTimer() {

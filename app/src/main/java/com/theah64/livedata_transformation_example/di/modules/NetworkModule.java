@@ -1,8 +1,7 @@
 package com.theah64.livedata_transformation_example.di.modules;
 
-import com.theah64.livedata_transformation_example.data.remote.RemoteInterface;
+import com.theah64.livedata_transformation_example.data.remote.ApiInterface;
 
-import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
@@ -22,13 +21,11 @@ public class NetworkModule {
         this.baseUrl = baseUrl;
     }
 
-
     @Singleton
     @Provides
-    RemoteInterface provideRemoteInterface(Retrofit retrofit) {
-        return retrofit.create(RemoteInterface.class);
+    ApiInterface provideApiInterface(Retrofit retrofit) {
+        return retrofit.create(ApiInterface.class);
     }
-
 
     @Singleton
     @Provides
