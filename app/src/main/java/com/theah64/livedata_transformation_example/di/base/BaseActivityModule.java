@@ -2,7 +2,7 @@ package com.theah64.livedata_transformation_example.di.base;
 
 import androidx.fragment.app.FragmentActivity;
 
-public abstract class BaseActivityModule<T> {
+public abstract class BaseActivityModule {
 
     private final FragmentActivity fragmentActivity;
 
@@ -14,5 +14,4 @@ public abstract class BaseActivityModule<T> {
         return fragmentActivity;
     }
 
-    protected abstract T getViewModel();
 }

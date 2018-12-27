@@ -8,21 +8,16 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-class SplashActivityModule extends BaseActivityModule<SplashActivityViewModel> {
+class SplashActivityModule extends BaseActivityModule {
 
     SplashActivityModule(FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
 
-    @Override
-    protected SplashActivityViewModel getViewModel() {
-        return ViewModelProviders.of(getFragmentActivity())
-                .get(SplashActivityViewModel.class);
-    }
-
     @Provides
     SplashActivityViewModel provideSplashActivityViewModel() {
-        return getViewModel();
+        return ViewModelProviders.of(getFragmentActivity())
+                .get(SplashActivityViewModel.class);
     }
 
 }

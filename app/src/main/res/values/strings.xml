@@ -2,4 +2,13 @@
     <string name="app_name">livedata_transformation_example</string>
     <string name="action_settings">Settings</string>
     <string name="Logo">Logo</string>
+    <string name="map_title">Transformations.map</string>
+    <string name="map_desc">Applies the given function on the main thread to each value emitted by source LiveData and returns LiveData, which emits resulting values.</string>
+    <string name="switch_map_title">Transformations.switchMap</string>
+    <string name="switch_map_desc">Creates a LiveData, let\'s name it swLiveData, which follows next flow: it reacts on changes of trigger LiveData, applies the given function to new value of trigger LiveData and sets resulting LiveData as a backing LiveData to swLiveData</string>
+    <string name="custom">Custom</string>
+    <string name="custom_desc">To implement your own transformation you can you use the MediatorLiveData class, which listens to other LiveData objects and processes events emitted by them.</string>
+    <string name="CHANGE_COLOR">CHANGE COLOR</string>
+
+
 </resources>
