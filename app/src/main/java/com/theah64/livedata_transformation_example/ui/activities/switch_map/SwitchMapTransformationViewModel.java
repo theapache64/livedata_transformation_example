@@ -18,7 +18,7 @@ public class SwitchMapTransformationViewModel extends ViewModel {
     private ApiRepository apiRepository;
 
     @Inject
-    public SwitchMapTransformationViewModel(ApiRepository apiRepository) {
+    SwitchMapTransformationViewModel(ApiRepository apiRepository) {
         this.apiRepository = apiRepository;
     }
 
@@ -32,7 +32,7 @@ public class SwitchMapTransformationViewModel extends ViewModel {
         }
     });
 
-    public LiveData<SearchResponse> getSearchResponse() {
+    LiveData<SearchResponse> getSearchResponse() {
         return searchResponse;
     }
 }

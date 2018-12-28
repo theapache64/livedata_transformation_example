@@ -20,5 +20,6 @@ import dagger.android.AndroidInjectionModule;
 })
 public interface ApplicationComponent {
     void inject(App app);
-    SwitchMapTransformationActivityComponent plus(SwitchMapTransformationActivityModule module);
+
+    SwitchMapTransformationActivityComponent.Builder switchMapBuilder();
 }

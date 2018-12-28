@@ -1,11 +1,7 @@
 package com.theah64.livedata_transformation_example.ui.activities.switch_map;
 
-import android.content.Context;
-
 import com.theah64.livedata_transformation_example.data.remote.ApiRepository;
 import com.theah64.livedata_transformation_example.di.base.ActivityModule;
-import com.theah64.livedata_transformation_example.di.components.ApplicationComponent;
-import com.theah64.livedata_transformation_example.di.modules.NetworkModule;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProviders;

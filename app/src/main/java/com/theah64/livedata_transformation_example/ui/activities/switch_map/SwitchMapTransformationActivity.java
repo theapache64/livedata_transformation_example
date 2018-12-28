@@ -40,7 +40,10 @@ public class SwitchMapTransformationActivity extends AppCompatActivity {
 
         ((App) getApplicationContext())
                 .getApplicationComponent()
-                .plus(new SwitchMapTransformationActivityModule(this))
+                .switchMapBuilder()
+                .activityModule(new ActivityModule(this))
+                .switchMapTransformationActivityModule(new SwitchMapTransformationActivityModule())
+                .build()
                 .inject(this);
 
         assert getSupportActionBar() != null;
