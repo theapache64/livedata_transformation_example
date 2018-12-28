@@ -10,6 +10,7 @@ import android.graphics.drawable.shapes.Shape;
 
 import com.theah64.livedata_transformation_example.R;
 import com.theah64.livedata_transformation_example.di.base.BaseActivityModule;
+import com.theah64.livedata_transformation_example.di.modules.RecyclerViewModule;
 import com.theah64.livedata_transformation_example.models.MenuItem;
 import com.theah64.livedata_transformation_example.ui.adapters.MenuAdapter;
 
@@ -25,7 +26,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import dagger.Module;
 import dagger.Provides;
 
-@Module
+@Module(includes = RecyclerViewModule.class)
 class MainActivityModule extends BaseActivityModule {
 
     private final MenuAdapter.Callback menuAdapterCallback;
@@ -56,20 +57,5 @@ class MainActivityModule extends BaseActivityModule {
         return new MainActivityViewModelFactory(menuAdapter);
     }
 
-    @Provides
-    DividerItemDecoration provideDividerItemDecoration(Context context, GradientDrawable gd) {
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(context, DividerItemDecoration.VERTICAL);
-        dividerItemDecoration.setDrawable(gd);
-        return dividerItemDecoration;
-    }
 
-    @Provides
-    GradientDrawable provideGradientDrawable(Context context) {
-        // Creating shape
-        final GradientDrawable gd = new GradientDrawable();
-        gd.setShape(GradientDrawable.RECTANGLE);
-        gd.setSize(1, 1);
-        gd.setColor(ContextCompat.getColor(context, R.color.grey_50));
-        return gd;
-    }
 }

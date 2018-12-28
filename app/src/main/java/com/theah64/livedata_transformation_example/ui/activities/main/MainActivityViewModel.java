@@ -19,8 +19,4 @@ public class MainActivityViewModel extends ViewModel {
     public MenuAdapter getAdapter() {
         return menuAdapter;
     }
-
-    public void onMenuItemSelected() {
-        System.out.println("Item selected");
-    }
 }
