@@ -12,24 +12,8 @@ import androidx.lifecycle.ViewModelProviders;
 import dagger.Module;
 import dagger.Provides;
 
-@Module
+@Module(includes = {ActivityModule.class})
 public class SwitchMapTransformationActivityModule {
-
-    private final FragmentActivity fragmentActivity;
-
-    SwitchMapTransformationActivityModule(FragmentActivity fragmentActivity) {
-        this.fragmentActivity = fragmentActivity;
-    }
-
-    @Provides
-    FragmentActivity provideFragmentActivity() {
-        return fragmentActivity;
-    }
-
-    @Provides
-    Context provideContext() {
-        return fragmentActivity;
-    }
 
     @Provides
     SwitchMapTransformationViewModelFactory provideSwitchMapTransformationViewModelFactory(ApiRepository apiRepository) {
