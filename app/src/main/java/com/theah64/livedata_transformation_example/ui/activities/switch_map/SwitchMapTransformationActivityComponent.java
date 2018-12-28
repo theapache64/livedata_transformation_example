@@ -1,8 +1,14 @@
 package com.theah64.livedata_transformation_example.ui.activities.switch_map;
 
-import dagger.Component;
+import com.theah64.livedata_transformation_example.di.base.ActivityModule;
+import com.theah64.livedata_transformation_example.di.modules.NetworkModule;
 
-@Component(modules = SwitchMapTransformationActivityModule.class)
+import dagger.Component;
+import dagger.Subcomponent;
+
+@Subcomponent(modules = {
+        SwitchMapTransformationActivityModule.class
+})
 public interface SwitchMapTransformationActivityComponent {
     void inject(SwitchMapTransformationActivity activity);
 }
