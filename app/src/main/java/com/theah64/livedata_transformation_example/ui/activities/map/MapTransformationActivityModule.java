@@ -6,11 +6,11 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class MapTransformationActivityModule {
+class MapTransformationActivityModule {
 
     private final FragmentActivity fragmentActivity;
 
-    public MapTransformationActivityModule(FragmentActivity fragmentActivity) {
+    MapTransformationActivityModule(FragmentActivity fragmentActivity) {
         this.fragmentActivity = fragmentActivity;
     }
 

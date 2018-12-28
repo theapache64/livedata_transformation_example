@@ -10,7 +10,7 @@ public class MapTransformationViewModel extends ViewModel {
     public String name;
     private MutableLiveData<String> user = new MutableLiveData<>();
     private LiveData<String> toastMessage = Transformations.map(user, input ->
-            input.isEmpty() ? "Please enter your name " : "User added : " + input
+            input == null || input.isEmpty() ? "Please enter your name " : "User added : " + input
     );
 
     public void onAddUserClicked(String name) {
