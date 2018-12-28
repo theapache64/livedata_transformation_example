@@ -3,6 +3,7 @@ package com.theah64.livedata_transformation_example.ui.activities.splash;
 import android.os.Bundle;
 
 import com.theah64.livedata_transformation_example.R;
+import com.theah64.livedata_transformation_example.di.base.ActivityModule;
 import com.theah64.livedata_transformation_example.ui.activities.base.BaseAppCompatActivity;
 import com.theah64.livedata_transformation_example.ui.activities.main.MainActivity;
 
@@ -22,7 +23,8 @@ public class SplashActivity extends BaseAppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         DaggerSplashActivityComponent.builder()
-                .splashActivityModule(new SplashActivityModule(this))
+                .activityModule(new ActivityModule(this))
+                .splashActivityModule(new SplashActivityModule())
                 .build()
                 .inject(this);
 
