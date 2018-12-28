@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.theah64.livedata_transformation_example.R;
 import com.theah64.livedata_transformation_example.data.remote.models.SearchResponse;
@@ -52,12 +53,19 @@ public class SwitchMapTransformationActivity extends AppCompatActivity {
         binding.setLifecycleOwner(this);
         binding.setViewModel(viewModel);
 
+        UsersAdapter adapter = new UsersAdapter(SwitchMapTransformationActivity.this);
+        binding.rvSearchResult.setAdapter(
+                adapter
+        );
+
         viewModel.getSearchResponse().observe(
                 this,
                 searchResponse -> {
-                    binding.rvSearchResult.setAdapter(
-                            new UsersAdapter(SwitchMapTransformationActivity.this, searchResponse.getData().getUsers())
-                    );
+                    if (!searchResponse.isError()) {
+                        adapter.setUsers(searchResponse.getData().getUsers());
+                    } else {
+                        Toast.makeText(this, searchResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
                 }
         );
 

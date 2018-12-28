@@ -8,6 +8,7 @@ import com.theah64.livedata_transformation_example.data.remote.models.SearchResp
 import com.theah64.livedata_transformation_example.databinding.UsersRowBinding;
 import com.theah64.livedata_transformation_example.ui.adapters.recyclerview_adapters.base.BaseDataBindingViewHolder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -15,12 +16,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> {
 
-    private final List<SearchResponse.User> users;
+    private List<SearchResponse.User> users = new ArrayList<>();
     private final LayoutInflater layoutInflater;
 
-    public UsersAdapter(Context context, List<SearchResponse.User> users) {
+    public UsersAdapter(Context context) {
         this.layoutInflater = LayoutInflater.from(context);
+    }
+
+    public void setUsers(List<SearchResponse.User> users) {
         this.users = users;
+        notifyDataSetChanged();
     }
 
     @NonNull
