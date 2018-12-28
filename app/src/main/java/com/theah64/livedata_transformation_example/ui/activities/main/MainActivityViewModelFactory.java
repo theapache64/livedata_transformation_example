@@ -1,6 +1,6 @@
 package com.theah64.livedata_transformation_example.ui.activities.main;
 
-import com.theah64.livedata_transformation_example.ui.adapters.MenuAdapter;
+import com.theah64.livedata_transformation_example.ui.adapters.recyclerview_adapters.MenuAdapter;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;

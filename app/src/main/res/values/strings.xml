@@ -11,6 +11,7 @@
     <string name="CHANGE_COLOR">CHANGE COLOR</string>
     <string name="ADD_USER">ADD USER</string>
     <string name="Enter_your_name">Enter your name</string>
+    <string name="Search">Search</string>
 
 
 </resources>

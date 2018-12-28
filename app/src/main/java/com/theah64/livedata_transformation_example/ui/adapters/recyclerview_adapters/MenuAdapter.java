@@ -1,4 +1,4 @@
-package com.theah64.livedata_transformation_example.ui.adapters;
+package com.theah64.livedata_transformation_example.ui.adapters.recyclerview_adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import com.theah64.livedata_transformation_example.R;
 import com.theah64.livedata_transformation_example.databinding.MenuItemsRowBinding;
 import com.theah64.livedata_transformation_example.models.MenuItem;
+import com.theah64.livedata_transformation_example.ui.adapters.recyclerview_adapters.base.BaseDataBindingViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,24 +60,15 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
         return MENU_ITEMS.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
-        private final MenuItemsRowBinding binding;
+    class ViewHolder extends BaseDataBindingViewHolder<MenuItemsRowBinding> {
 
         ViewHolder(MenuItemsRowBinding binding) {
-            super(binding.getRoot());
-            this.binding = binding;
+            super(binding);
 
-            binding.getRoot().setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    MenuItem menuItem = MENU_ITEMS.get(getLayoutPosition());
-                    callback.onItemClicked(menuItem);
-                }
+            binding.getRoot().setOnClickListener(v -> {
+                MenuItem menuItem = MENU_ITEMS.get(getLayoutPosition());
+                callback.onItemClicked(menuItem);
             });
-        }
-
-        MenuItemsRowBinding getBinding() {
-            return binding;
         }
     }
 

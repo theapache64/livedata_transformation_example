@@ -4,6 +4,8 @@
     package="com.theah64.livedata_transformation_example">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 
     <application
         android:name=".util.App"
@@ -16,7 +18,7 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
-        <activity android:name=".ui.activities.switch_map.SwitchMapTransformationActivity"></activity>
+        <activity android:name=".ui.activities.switch_map.SwitchMapTransformationActivity" />
         <activity android:name=".ui.activities.map.MapTransformationActivity" />
         <activity
             android:name=".ui.activities.splash.SplashActivity"

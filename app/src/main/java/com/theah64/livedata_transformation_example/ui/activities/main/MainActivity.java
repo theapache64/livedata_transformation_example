@@ -3,22 +3,20 @@ package com.theah64.livedata_transformation_example.ui.activities.main;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.theah64.livedata_transformation_example.R;
 import com.theah64.livedata_transformation_example.databinding.ActivityMainBinding;
 import com.theah64.livedata_transformation_example.di.base.ActivityModule;
-import com.theah64.livedata_transformation_example.di.modules.RecyclerViewModule;
 import com.theah64.livedata_transformation_example.models.MenuItem;
 import com.theah64.livedata_transformation_example.ui.activities.base.BaseAppCompatActivity;
 import com.theah64.livedata_transformation_example.ui.activities.map.MapTransformationActivity;
-import com.theah64.livedata_transformation_example.ui.adapters.MenuAdapter;
+import com.theah64.livedata_transformation_example.ui.activities.switch_map.SwitchMapTransformationActivity;
+import com.theah64.livedata_transformation_example.ui.adapters.recyclerview_adapters.MenuAdapter;
 
 import javax.inject.Inject;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
-import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.DividerItemDecoration;
 
 public class MainActivity extends BaseAppCompatActivity implements MenuAdapter.Callback {
@@ -64,6 +62,7 @@ public class MainActivity extends BaseAppCompatActivity implements MenuAdapter.C
                 break;
 
             case R.id.switch_map:
+                SwitchMapTransformationActivity.start(this);
                 break;
 
             case R.id.custom_map:

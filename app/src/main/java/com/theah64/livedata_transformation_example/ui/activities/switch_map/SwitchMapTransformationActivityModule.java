@@ -1,9 +1,10 @@
 package com.theah64.livedata_transformation_example.ui.activities.switch_map;
 
-import androidx.fragment.app.FragmentActivity;
+import com.theah64.livedata_transformation_example.di.base.ActivityModule;
+
 import dagger.Module;
 
-@Module
-public class SwitchMapTransformationActivityModule {
+@Module(includes = ActivityModule.class)
+class SwitchMapTransformationActivityModule {
 
 }
