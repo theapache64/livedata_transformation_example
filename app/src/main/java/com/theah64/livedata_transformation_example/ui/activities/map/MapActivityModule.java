@@ -6,17 +6,17 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-class MapTransformationActivityModule {
+class MapActivityModule {
 
     private final FragmentActivity fragmentActivity;
 
-    MapTransformationActivityModule(FragmentActivity fragmentActivity) {
+    MapActivityModule(FragmentActivity fragmentActivity) {
         this.fragmentActivity = fragmentActivity;
     }
 
     @Provides
-    MapTransformationViewModel provideMapTransformationViewModel() {
+    MapActivityViewModel provideMapTransformationViewModel() {
         return ViewModelProviders.of(fragmentActivity)
-                .get(MapTransformationViewModel.class);
+                .get(MapActivityViewModel.class);
     }
 }

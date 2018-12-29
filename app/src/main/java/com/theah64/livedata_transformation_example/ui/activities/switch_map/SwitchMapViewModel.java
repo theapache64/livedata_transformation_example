@@ -12,13 +12,13 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Transformations;
 import androidx.lifecycle.ViewModel;
 
-public class SwitchMapTransformationViewModel extends ViewModel {
+public class SwitchMapViewModel extends ViewModel {
 
     // instance vars
     private ApiRepository apiRepository;
 
     @Inject
-    SwitchMapTransformationViewModel(ApiRepository apiRepository) {
+    SwitchMapViewModel(ApiRepository apiRepository) {
         this.apiRepository = apiRepository;
     }
 

@@ -18,8 +18,10 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
-        <activity android:name=".ui.activities.switch_map.SwitchMapTransformationActivity" />
-        <activity android:name=".ui.activities.map.MapTransformationActivity" />
+        <activity
+            android:name=".ui.activities.switch_map.SwitchMapActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.activities.map.MapActivity" />
         <activity
             android:name=".ui.activities.splash.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">

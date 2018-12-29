@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Transformations;
 import androidx.lifecycle.ViewModel;
 
-public class MapTransformationViewModel extends ViewModel {
+public class MapActivityViewModel extends ViewModel {
 
     public String name;
     private MutableLiveData<String> user = new MutableLiveData<>();

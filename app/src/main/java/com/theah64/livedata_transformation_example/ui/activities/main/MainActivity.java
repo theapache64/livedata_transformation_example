@@ -9,8 +9,8 @@ import com.theah64.livedata_transformation_example.databinding.ActivityMainBindi
 import com.theah64.livedata_transformation_example.di.base.ActivityModule;
 import com.theah64.livedata_transformation_example.models.MenuItem;
 import com.theah64.livedata_transformation_example.ui.activities.base.BaseAppCompatActivity;
-import com.theah64.livedata_transformation_example.ui.activities.map.MapTransformationActivity;
-import com.theah64.livedata_transformation_example.ui.activities.switch_map.SwitchMapTransformationActivity;
+import com.theah64.livedata_transformation_example.ui.activities.map.MapActivity;
+import com.theah64.livedata_transformation_example.ui.activities.switch_map.SwitchMapActivity;
 import com.theah64.livedata_transformation_example.ui.adapters.recyclerview_adapters.MenuAdapter;
 
 import javax.inject.Inject;
@@ -58,11 +58,11 @@ public class MainActivity extends BaseAppCompatActivity implements MenuAdapter.C
         switch (menuItem.getId()) {
 
             case R.id.map:
-                MapTransformationActivity.start(this);
+                MapActivity.start(this);
                 break;
 
             case R.id.switch_map:
-                SwitchMapTransformationActivity.start(this);
+                SwitchMapActivity.start(this);
                 break;
 
             case R.id.custom_map:

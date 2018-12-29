@@ -3,27 +3,24 @@ package com.theah64.livedata_transformation_example.ui.activities.map;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.theah64.livedata_transformation_example.R;
-import com.theah64.livedata_transformation_example.databinding.ActivityMapTransformationBinding;
+import com.theah64.livedata_transformation_example.databinding.ActivityMapBinding;
 import com.theah64.livedata_transformation_example.ui.activities.base.BaseAppCompatActivity;
-import com.theah64.livedata_transformation_example.util.System;
 
 import javax.inject.Inject;
 
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.Observer;
 
-public class MapTransformationActivity extends BaseAppCompatActivity {
+public class MapActivity extends BaseAppCompatActivity {
 
 
     @Inject
-    MapTransformationViewModel viewModel;
+    MapActivityViewModel viewModel;
 
     public static void start(Context context) {
-        final Intent i = new Intent(context, MapTransformationActivity.class);
+        final Intent i = new Intent(context, MapActivity.class);
         context.startActivity(i);
     }
 
@@ -37,16 +34,16 @@ public class MapTransformationActivity extends BaseAppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityMapTransformationBinding binding = DataBindingUtil.setContentView(
+        ActivityMapBinding binding = DataBindingUtil.setContentView(
                 this,
-                R.layout.activity_map_transformation
+                R.layout.activity_map
         );
 
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        DaggerMapTransformationActivityComponent.builder()
-                .mapTransformationActivityModule(new MapTransformationActivityModule(this))
+        DaggerMapActivityComponent.builder()
+                .mapActivityModule(new MapActivityModule(this))
                 .build()
                 .inject(this);
 

@@ -9,18 +9,18 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module(includes = {ActivityModule.class})
-public class SwitchMapTransformationActivityModule {
+public class SwitchMapActivityModule {
 
     @Provides
-    SwitchMapTransformationViewModelFactory provideSwitchMapTransformationViewModelFactory(ApiRepository apiRepository) {
-        return new SwitchMapTransformationViewModelFactory(apiRepository);
+    SwitchMapViewModelFactory provideSwitchMapTransformationViewModelFactory(ApiRepository apiRepository) {
+        return new SwitchMapViewModelFactory(apiRepository);
     }
 
     @Provides
-    SwitchMapTransformationViewModel provideSwitchMapTransformationViewModel(FragmentActivity fragmentActivity, SwitchMapTransformationViewModelFactory factory) {
+    SwitchMapViewModel provideSwitchMapTransformationViewModel(FragmentActivity fragmentActivity, SwitchMapViewModelFactory factory) {
         return ViewModelProviders.of(
                 fragmentActivity,
                 factory
-        ).get(SwitchMapTransformationViewModel.class);
+        ).get(SwitchMapViewModel.class);
     }
 }

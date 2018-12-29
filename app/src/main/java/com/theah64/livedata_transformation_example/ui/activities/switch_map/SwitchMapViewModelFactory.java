@@ -7,20 +7,19 @@ import javax.inject.Inject;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 
-public class SwitchMapTransformationViewModelFactory implements ViewModelProvider.Factory {
+public class SwitchMapViewModelFactory implements ViewModelProvider.Factory {
 
     private ApiRepository apiRepository;
 
     @Inject
-    SwitchMapTransformationViewModelFactory(ApiRepository apiRepository) {
+    SwitchMapViewModelFactory(ApiRepository apiRepository) {
         this.apiRepository = apiRepository;
     }
 
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        return (T) new SwitchMapTransformationViewModel(apiRepository);
+        return (T) new SwitchMapViewModel(apiRepository);
     }
 }
