@@ -21,6 +21,9 @@ public class SwitchMapActivity extends AppCompatActivity {
     @Inject
     SwitchMapViewModel viewModel;
 
+    @Inject
+    UsersAdapter adapter;
+
     public static void start(Context context) {
         final Intent i = new Intent(context, SwitchMapActivity.class);
         context.startActivity(i);
@@ -45,7 +48,6 @@ public class SwitchMapActivity extends AppCompatActivity {
         binding.setLifecycleOwner(this);
         binding.setViewModel(viewModel);
 
-        UsersAdapter adapter = new UsersAdapter(SwitchMapActivity.this);
         binding.rvSearchResult.setAdapter(
                 adapter
         );
