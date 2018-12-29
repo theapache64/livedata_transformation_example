@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="com.theah64.livedata_transformation_example.ui.activities.main.MainActivityViewModel" />
+            type="com.theah64.livedata_transformation_example.ui.activities.switch_map.SwitchMapViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -13,23 +13,32 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context=".ui.activities.main.MainActivity"
-        tools:showIn="@layout/activity_main">
+        tools:context=".ui.activities.switch_map.SwitchMapActivity">
 
-        <!--Menu-->
+
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvMenu"
+            android:id="@+id/rvSearchResult"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:adapter="@{viewModel.getAdapter()}"
-            android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:itemCount="10"
-            tools:listitem="@layout/menu_items_row" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/etSearchQuery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/Search"
+            android:padding="8dp"
+            android:text="@={viewModel.searchQuery}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
