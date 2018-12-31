@@ -2,12 +2,11 @@ package com.theah64.livedata_transformation_example.ui.adapters.recyclerview_ada
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import com.theah64.livedata_transformation_example.R;
 import com.theah64.livedata_transformation_example.databinding.MenuItemsRowBinding;
-import com.theah64.livedata_transformation_example.models.MenuItem;
+import com.theah64.livedata_transformation_example.data.models.MenuItem;
 import com.theah64.livedata_transformation_example.ui.adapters.recyclerview_adapters.base.BaseDataBindingViewHolder;
 
 import java.util.ArrayList;

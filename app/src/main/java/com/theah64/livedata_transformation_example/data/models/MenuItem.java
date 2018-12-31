@@ -1,4 +1,4 @@
-package com.theah64.livedata_transformation_example.models;
+package com.theah64.livedata_transformation_example.data.models;
 
 import androidx.annotation.IdRes;
 import androidx.annotation.StringRes;
