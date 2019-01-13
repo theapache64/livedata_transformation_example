@@ -47,8 +47,8 @@ dependencies {
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.14.1'
 
     // Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
     implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
 
     // RxJava

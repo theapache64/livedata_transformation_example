@@ -7,7 +7,7 @@ import android.os.Bundle;
 import com.theah64.livedata_transformation_example.R;
 import com.theah64.livedata_transformation_example.databinding.ActivityMainBinding;
 import com.theah64.livedata_transformation_example.di.base.ActivityModule;
-import com.theah64.livedata_transformation_example.models.MenuItem;
+import com.theah64.livedata_transformation_example.data.models.MenuItem;
 import com.theah64.livedata_transformation_example.ui.activities.base.BaseAppCompatActivity;
 import com.theah64.livedata_transformation_example.ui.activities.map.MapActivity;
 import com.theah64.livedata_transformation_example.ui.activities.switch_map.SwitchMapActivity;
