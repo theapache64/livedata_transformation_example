@@ -5,7 +5,7 @@
 
         <variable
             name="menuItem"
-            type="com.theah64.livedata_transformation_example.models.MenuItem" />
+            type="com.theah64.livedata_transformation_example.data.models.MenuItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
